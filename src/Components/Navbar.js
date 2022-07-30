@@ -30,7 +30,7 @@ function Navbar() {
                                 <ImageSearchIcon className='mt-5' /><li >
                                     Images </li>
                             </a>
-                            <a href='/' className='flex space-x-4'>
+                            <a href='/video' className='flex space-x-4'>
                                 <SmartDisplayIcon className='mt-5' /> <li >
                                     Videos</li></a>
                             <a href='/User_details' className='flex space-x-4'>
@@ -39,9 +39,13 @@ function Navbar() {
                             <a href='/setting' className='flex space-x-4'>
                                 <SettingsIcon className='mt-5' /> <li >
                                     Settings</li></a>
+                                    
+            
 
                         </div>
-
+                        <a href='/Login'>
+                        <button  type="button" class="text-white bg-[#8a8c99] mt-7  font-medium rounded-lg text-sm px-5 py-2.5 ml-[50px] " >Login</button>
+                        </a>
                     </ul>
 
 
