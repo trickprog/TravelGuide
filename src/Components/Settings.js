@@ -21,7 +21,7 @@ function Settings() {
             {open && <Pmodel
                             close={setopen}
                             />}    
-            <img class="w-[200px] h-[200px] absolute -mt-4 ml-10 rounded-full" src={pf} alt="Neil image" />
+            {/* <img class="w-[200px] h-[200px] absolute -mt-4 ml-10 rounded-full" src={pf} alt="Neil image" /> */}
                 <div className='flex flex-col ml-[280px] text-xl font-medium  gap-8 '>
                     
                     <label className='text-[#6d6a6a]'> <label   className='  text-black mt-10'>Name: </label>Emma Watson</label>

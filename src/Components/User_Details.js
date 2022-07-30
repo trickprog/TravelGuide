@@ -11,7 +11,7 @@ function User_Details(props) {
 
             </div>
             <div className=' w-[100%] h-[300px] bg-white '>
-                <img class="w-[200px] h-[200px] absolute -mt-2 ml-10 rounded-full" src={pf} alt="Neil image" />
+                {/* <img class="w-[200px] h-[200px] absolute -mt-2 ml-10 rounded-full" src={pf} alt="Neil image" /> */}
                 <div className='flex flex-col ml-[280px] text-xl font-medium font-Poppins  gap-4 '>
                     <label className='text-[#6d6a6a]'> <label   className='  text-black '>Name: </label>Jason Crejza</label>
                     <label className='text-[#6d6a6a]'>  <label className=' text-black'>Username: </label>Jason Crejza</label>
