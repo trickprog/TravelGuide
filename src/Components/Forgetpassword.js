@@ -4,9 +4,9 @@ import { TextField } from '@mui/material';
 const Forgetpassword = () => {
     return (
         <div>
-            <div className=' ml-[400px] mt-[150px]'>
+            <div className='flex justify-center mt-[150px]'>
 
-                <div className="h-[400px] w-[500px] p-4 max-w-sm bg-white mr-0 rounded-lg border border-gray-200 shadow-lg shadow-gray-700 sm:p-6 lg:p-8 font-Poppins">
+                <div className="w-3/4 p-4 max-w-sm bg-white mr-0 rounded-lg border border-gray-200 shadow-lg shadow-gray-700 sm:p-6 lg:p-8 font-Poppins">
                     <form className="space-y-6 " action="#">
                         <h5 className="text-xl font-medium text-gray-900">Forget Password</h5>
                         <div className='mb-5'>

@@ -10,7 +10,7 @@ import img3 from '../assets/img3.png';
 
 export default function Index() {
     return (
-        <div className="container mx-auto rounded-md font-Poppins  bg-white mt-[730px] w-[1150px] ml-[100px]">
+        <div className="mx-auto rounded-md font-Poppins mt-5 bg-white  ">
 
             <div className="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4">
                 {/* Carousel for desktop and large size devices */}

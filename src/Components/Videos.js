@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
-import vid1 from '../img/1-min.mp4'
-import vid2 from '../img/2-min.mp4'
-import vid3 from '../img/3-min.mp4'
-import vid4 from '../img/4-min.mp4'
+import vid1 from '../vedios/1-min.mp4'
+import vid2 from '../vedios/2-min.mp4'
+import vid3 from '../vedios/3-min.mp4'
+import vid4 from '../vedios/4-min.mp4'
 
 import './gallery.css'
+import CloseIcon from '@mui/icons-material/Close';
+import DownloadIcon from '@mui/icons-material/Download';
 import { saveAs } from 'file-saver'
 
 const Videos = () => {
@@ -36,20 +38,24 @@ const Videos = () => {
 
 
     }
+    const downloadImage = () => {
 
+        saveAs(vidsrc, 'vedio.mp4')
+        
+        // console.log(vidsrc)
+    }
     return (
         <>
             <div className={model ? 'model open' : 'model'}>
             </div>
-            <div className='mt-[70px] ml-[30px] columns-2 '>
+            <div className='gallery'>
                 {data.map((item, index) => {
                     return (
-                        <div className='pics p-10' key={index} >
+                        <div className='pics' key={index} >
                             <video controls >
                                 <source src={item.vidSrc}  >
                                 </source>
                             </video>
-                           
                            
                         </div>
 

@@ -9,9 +9,9 @@ const Login = () => {
 
 
 
-        <div className=' mt-[150px] ml-[400px]'>
+        <div className='flex justify-center mt-[150px]'>
 
-            <div class=" p-4 max-w-sm bg-white mr-0 h-[400px] w-[500px] rounded-lg border border-gray-200 shadow-lg shadow-gray-700 sm:p-6 lg:p-8 font-Poppins">
+            <div class="w-3/4 p-4 max-w-sm bg-white mr-0 rounded-lg border border-gray-200 shadow-lg shadow-gray-700 sm:p-6 lg:p-8 font-Poppins">
                 <form class="space-y-6" action="#">
                     <h5 class="text-xl font-medium text-gray-900">Welcome To Admin Panel</h5>
                     <div>

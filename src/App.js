@@ -12,32 +12,43 @@ import Users from './Components/User';
 import Index from './Components/RecentUpload';
 import Images from './Components/Images';
 import Settings from './Components/Settings';
+import Videos from './Components/Videos'
 import Login from './Components/Login';
 import Forgetpassword from './Components/Forgetpassword';
-import Videos from './Components/Videos';
-
-
 function App() {
   return (
-    <div className="flex  ">
- <Navbar/>
-     <Router>
+    <div className="flex bg-[#F7F8Fc]">
+      <div className='  bg-[#363740]'><Navbar /></div>
+      <div className='m-auto '>
+        <Router>
+          <Routes>
+            <Route exact path='/' element={<Users />} />
+            <Route exact path='/images' element={<Images />} />
+            <Route exact path='/login' element={<Login/>}/>
+             <Route exact path='/Videos' element={<Videos />} />
+             <Route exact path='/setting' element={<Settings />} />
+             <Route exact path='/User_details' element={<User_Details />} />
+             <Route exact path='/Forgetpassword' element={<Forgetpassword/>}/>
+          </Routes>
+        </Router>
+      </div>
+    
+          
+         
+         
+
+
+
+
+      {/* <Router>
         <Routes>
-
-
-        <Route exact path='/' element={<Users/>}/>
-        <Route exact path='/login' element={<Login/>}/>
-        <Route exact path='/video' element={<Videos/>}/>
-          <Route exact path='/User_details' element={<User_Details/>}/>
-          <Route exact path='/Forgetpassword' element={<Forgetpassword/>}/>
-          <Route exact path='/images' element={<Images/>}/>
-          <Route exact path='/setting' element={<Settings/>}/>
+          <Login/>
 
         </Routes>
-      </Router>
+      </Router> */}
 
 
-      
+
     </div>
   );
 }

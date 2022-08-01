@@ -75,16 +75,16 @@ function Users
     }
 
     return (
-        <div className=' flwx '>
+        <div className=' m-5 '>
             {!dis ?
                 <UserDisplay parent={Ids} /> :
-                <div className={!dis ? 'hidden' : ' w-[1150px] bg-white rounded-[8px] border-[1px] absolute left-[400px] mt-[10px]'}>
+                <div className={!dis ? 'hidden' : '  bg-white rounded-[8px] border-[1px] mt-[10px]'}>
                     <div className='flex'>
                         <p className='w-[200px] font-Poppins m-10 text-2xl font-semibold  '>User's Info</p>
                         <div className='flex w-[100%] justify-end mt-10 mr-14 font-Poppins text-[#4B506D] font-medium space-x-5'>
-                            <img src={Vector} alt='' className=' w-[17px] h-[14px] mt-[5px] ' />
+                            <img src={Vector} alt='' className='  h-[14px] mt-[5px] ' />
                             <label>Sort</label>
-                            <img src={Vector1} alt='' className=' w-[14px] h-[14px] mt-[5px] ' />
+                            <img src={Vector1} alt='' className=' h-[14px] mt-[5px] ' />
                             <label>Filter</label>
                         </div>
 
@@ -92,15 +92,21 @@ function Users
 
                     </div>
                     <div className='text-[#4B506D] font-Poppins font-medium'>
-                        <label className='ml-14 absolute '>Name</label>
-                        <div className='ml-[300px]'>
-                            <div className='flex  '>
-                                <label className='w-[250px]'>Email</label>
-                                <label className='w-[170px]'>Last Uploaded</label>
-                                <label className='w-[200px]'>UserName</label>
 
-                            </div>
+
+                        <div className='flex  justify-evenly'>
+                        {/* <div className='ml-auto'></div> */}
+                            <label className='ml-10'>Name</label>
+                            <label className=''>Email</label>
+                            <label className=''>Last Uploaded</label>
+                            <label className='mr-10'>UserName</label>
+                            <div className='mr-10'>
+                            
                         </div>
+
+                        </div>
+                        
+
                         <hr />
                     </div>
 
@@ -135,7 +141,7 @@ function Users
 
                 </div>
             }
-            <label className="p-10  absolute mt-[640px] ml-[70px] font-Poppins  text-2xl font-semibold  "> Recent Uploads </label>
+            <label className="my-10  font-Poppins  text-2xl font-semibold  "> Recent Uploads </label>
             <RecentUpload />
 
         </div>
