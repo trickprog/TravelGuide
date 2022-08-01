@@ -9,8 +9,7 @@ import UserDisplay from './User_Display';
 import RecentUpload from './RecentUpload';
 
 
-function Users
-    () {
+function Users(props) {
 
 
     const Users = [
@@ -75,7 +74,8 @@ function Users
     }
 
     return (
-        <div className=' m-5 '>
+        <div className=' m-5  font-Poppins'>
+            <button onClick={props.open}>Open Navbar</button>
             {!dis ?
                 <UserDisplay parent={Ids} /> :
                 <div className={!dis ? 'hidden' : '  bg-white rounded-[8px] border-[1px] mt-[10px]'}>
