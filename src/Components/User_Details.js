@@ -5,12 +5,12 @@ import pf from '../assets/pf.jpg';
 function User_Details(props) {
   return (
     <>
-             <div className=' rounded-[8px]  '>
+             <div className=' rounded-[8px] bg-white w-[850px] h-[380px] mt-10  '>
             <div className='flex'>
                 <p className='font-Poppins m-10 text-2xl font-medium  '>User Details</p>
 
             </div>
-            <div className='flex'>
+            <div className='flex ml-10'>
                 <img class="w-[200px] h-[200px] rounded-full" src={pf} alt="Neil image" />
                 <div className='flex flex-col ml-5 text-xl font-medium font-Poppins justify-evenly'>
                     <label className='text-[#6d6a6a]'> <label   className='  text-black '>Name: </label>Jason Crejza</label>

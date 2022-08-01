@@ -33,7 +33,7 @@ function App() {
         <Route exact path='/Forgetpassword' element={<Forgetpassword />} />
         </Routes>
       </Router>
-      <div className="flex bg-[#F7F8Fc]">
+      <div className="flex bg-]">
         <div className={!open ? 'hidden':'  bg-[#363740]'}><Navbar /></div>
         <div className='m-auto '>
           <Router>
