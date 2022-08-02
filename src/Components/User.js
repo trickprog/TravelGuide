@@ -7,9 +7,10 @@ import arrow2 from '../assets/arrw2.png';
 
 import UserDisplay from './User_Display';
 import RecentUpload from './RecentUpload';
+import Navbar from './Navbar';
 
 
-function Users(props) {
+function Users() {
 
 
     const Users = [
@@ -73,9 +74,10 @@ function Users(props) {
 
     }
 
-    return (
+    return (<div className="flex">
+        <div className='bg-[#585269]'>
+    <Navbar/></div>
         <div className=' m-5  font-Poppins'>
-            <button onClick={props.open}>Open Navbar</button>
             {!dis ?
                 <UserDisplay parent={Ids} /> :
                 <div className={!dis ? 'hidden' : '  bg-white rounded-[8px] border-[1px] mt-[10px]'}>
@@ -144,6 +146,7 @@ function Users(props) {
             <label className="my-10  font-Poppins  text-2xl font-semibold  "> Recent Uploads </label>
             <RecentUpload />
 
+        </div>
         </div>
     )
 }

@@ -14,14 +14,14 @@ function Navbar() {
             <div className='flex flex-col items-center md:items-start'>
                 <div className='  w-[300px]   h-screen'>
                     <div className='flex '>
-                        <label className='font-Poppins font-extrabold text-2xl  mt-14 ml-14  text-[#A4A6B3] '>
+                        <label className='font-Poppins font-extrabold text-2xl  mt-14 ml-14  text-[#FAFAFA] '>
 
                             Admin Panel
                         </label>
                     </div>
 
 
-                    <ul className=' my-12 text-xl font-Poppins text-[#9FA2B4] '>
+                    <ul className=' my-12 text-xl font-Poppins text-[#FAFAFA] '>
                         <div className='flex flex-col ml-12' >
                             <a href='/Dashboard' className='flex space-x-4'>
                                 <DashboardIcon className='mt-5' /><li  >
@@ -40,7 +40,7 @@ function Navbar() {
 
                         </div>
                         <a href='/'>
-                        <button  type="button" class="text-white bg-[#8a8c99] mt-7  font-medium rounded-lg text-sm px-5 py-2.5 ml-[50px] " >Logout</button>
+                        <button  type="button" class="text-[#FAFAFA] bg-[#8a8c99] mt-7  font-medium rounded-lg text-sm px-5 py-2.5 ml-[50px] " >Logout</button>
                         </a>
                     </ul>
                 </div>

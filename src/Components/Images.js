@@ -11,6 +11,7 @@ import './gallery.css'
 import CloseIcon from '@mui/icons-material/Close';
 import DownloadIcon from '@mui/icons-material/Download';
 import { saveAs } from 'file-saver'
+import Navbar from './Navbar'
 
 const Images = () => {
     let data = [
@@ -64,6 +65,8 @@ const Images = () => {
     }
     return (
         <>
+                 <div className="flex ">
+    <div className='bg-[#585269]'><Navbar/></div>
             <div className={model ? 'model open' : 'model'}>
                 <DownloadIcon onClick={downloadImage} className='absolute left-3' />
                 <img src={temimgsrc} />
@@ -83,6 +86,7 @@ const Images = () => {
 
                 }
 
+            </div>
             </div>
 
         </>

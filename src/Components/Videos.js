@@ -8,6 +8,8 @@ import './gallery.css'
 import CloseIcon from '@mui/icons-material/Close';
 import DownloadIcon from '@mui/icons-material/Download';
 import { saveAs } from 'file-saver'
+import Navbar from './Navbar'
+
 
 const Videos = () => {
     let data = [
@@ -46,12 +48,12 @@ const Videos = () => {
     }
     return (
         <>
-            <div className={model ? 'model open' : 'model'}>
-            </div>
-            <div className='gallery'>
+         <div className="flex ">
+    <div className='bg-[#585269]'><Navbar/></div>
+            <div className='grid grid-cols-2 m-2'>
                 {data.map((item, index) => {
                     return (
-                        <div className='pics' key={index} >
+                        <div className='pics m-2' key={index} >
                             <video controls >
                                 <source src={item.vidSrc}  >
                                 </source>
@@ -65,7 +67,7 @@ const Videos = () => {
                 }
 
             </div>
-
+</div>
         </>
     )
 }

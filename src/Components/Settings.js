@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import pf from '../assets/pf.jpg';
+import Navbar from './Navbar';
 import Pmodel from './Pmodel';
 
 
@@ -8,7 +9,8 @@ function Settings() {
 
 
   return (
-    <>
+    <>    <div className="flex space-x-9">
+    <div className='bg-[#363740]'><Navbar/></div>
 
       <div className=' rounded-[8px]  font-Poppins bg-white w-[850px] h-[380px] mt-10
  '>
@@ -24,7 +26,7 @@ function Settings() {
             />}
           </div>
           <div className='flex ml-7'>
-            <img class="w-[200px] h-[200px] m-2   rounded-full" src={pf} alt="Neil image" />
+            <img class="w-[200px] h-[200px] m-2   rounded-full" src={pf} alt="img" />
             <div className='flex flex-col text-xl font-medium justify-evenly '>
 
               <label className='text-[#6d6a6a]'> <label className='  text-black '>Name: </label>Emma Watson</label>
@@ -34,6 +36,7 @@ function Settings() {
           </div>
         </div>
 
+      </div>
       </div>
     </>
   )

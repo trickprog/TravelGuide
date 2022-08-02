@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap');
 
 body{
-    background-color: rgb(180, 177, 177)
+    background-color: #FAFAFA
     
 }
 
@@ -14,7 +14,6 @@ body{
         @apply py-5;
         /* @apply ml-14; */
         @apply flex;
-        @apply active:bg-[#9FA2B4] active:text-white;
         
         @apply cursor-pointer
     }
