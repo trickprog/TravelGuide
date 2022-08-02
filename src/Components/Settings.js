@@ -10,7 +10,7 @@ function Settings() {
 
   return (
     <>    <div className="flex space-x-9">
-    <div className='bg-[#363740]'><Navbar/></div>
+    <div className='bg-[#585269]'><Navbar/></div>
 
       <div className=' rounded-[8px]  font-Poppins bg-white w-[850px] h-[380px] mt-10
  '>

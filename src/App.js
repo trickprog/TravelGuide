@@ -23,18 +23,18 @@ function App() {
     <>
       <Router>
         <Routes>
-        <Route exact path='/' element={<Login />} />
-        <Route exact path='/Forgetpassword' element={<Forgetpassword />} />
+
         </Routes>
       </Router>
-      <div className="flex bg">
+      <div className="">
           <Router>
             <Routes>
               <Route exact path='/Dashboard' element={<Users/>} />
               <Route exact path='/images' element={<Images />} />
               <Route exact path='/Videos' element={<Videos />} />
               <Route exact path='/setting' element={<Settings />} />
-
+              <Route exact path='/' element={<Login />} />
+        <Route exact path='/Forgetpassword' element={<Forgetpassword />} />
               <Route exact path='/User_details' element={<User_Details />} />
             </Routes>
           </Router>
