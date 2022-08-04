@@ -16,7 +16,11 @@ module.exports = {
 
     },
     colors :{
-      'color1' :'#013B8D',
+      'colornav' :'#FEF5F9',
+      'colortxt':'#2E2E2E',
+      'btn':'#585269',
+      "dark-purple": "#081A51",
+        "light-white": "rgba(255,255,255,0.17)",
     },
 
   },

@@ -9,18 +9,4 @@ body{
     
 }
 
-@layer base {
-    li {
-        @apply py-5;
-        /* @apply ml-14; */
-        @apply flex;
-        
-        @apply cursor-pointer
-    }
-    input{
-        @apply py-10
-    }
-    hr{
-        @apply my-5
-    }
-}
+
