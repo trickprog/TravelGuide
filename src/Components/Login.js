@@ -19,7 +19,7 @@ const Login = () => {
                     <TextField color='info' className=' bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5' id="outlined-basic" label="Email" variant="outlined" placeholder='Your Email' />
                 </div>
                 <div>
-                    <TextField className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5' id="outlined-basic" label="Password" variant="outlined" placeholder='**********' />
+                    <TextField className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5' id="outlined-basic" label="Password" variant="outlined"  type='password' />
                 </div>
                 <div class="flex items-start">
 
