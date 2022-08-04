@@ -7,10 +7,14 @@ import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantity
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 function Navbar() {
 
+    const loggedin = localStorage.getItem('auth')
+
     // const auth = getAuth(app);
 
     return (
+        
         <>
+   
             <div className='flex flex-col items-center md:items-start bg-colornav'>
                 <div className='  w-[300px]   h-screen'>
                     <div className='flex '>
@@ -26,18 +30,18 @@ function Navbar() {
                             <a href='/Dashboard' className='flex space-x-4 space-y-7 '>
                                 <DashboardIcon className='mt-8' /><li  >
                                     Dashboard</li> </a>
-                            <a href='/' className='flex space-x-4 space-y-7'>
+                            <a href='/User' className='flex space-x-4 space-y-7'>
                                 <PersonIcon className='mt-8' /><li >
                                     Users </li>
                             </a>
                             <a href='/Products' className='flex space-x-4 space-y-7'>
                                 <ProductionQuantityLimitsIcon className='mt-8' /> <li >
                                     Products</li></a>
-                            <a href='/' className='flex space-x-4 space-y-7'>
+                            <a href='/Offers' className='flex space-x-4 space-y-7'>
                                 < LocalOfferIcon className='mt-8' /> <li >
                                     Offers</li></a>
 
-                            <a href='/' className='flex space-x-4 space-y-7'>
+                            <a href='/Coupons' className='flex space-x-4 space-y-7'>
                                 <PriceChangeIcon className='mt-8' /> <li >
                                     Coupons</li></a>
 
@@ -53,7 +57,7 @@ function Navbar() {
 
         </>
 
-
+    
     )
 }
 

@@ -15,14 +15,14 @@ export default function Product_display(props) {
     return (
         <>
 
-<div>
-            <div className="flex flex-wrap items-center lg:justify-between justify-center pb-10 mt-6  font-Poppins">
+
+            <div className="flex flex-wrap items-center justify-center  mt-6  font-Poppins">
                 {/* Card 1 */}
-                <div className="mx-2 w-72 lg:mb-0 mb-8">
+                <div className=" w-72 lg:mb-0 mb-8">
                     <div>
                         <img src={props.img} className="w-full h-44" alt="nimg" />
                     </div>
-                    <div className="bg-white">
+                    <div className="bg-[#FFF5F9]  hover:bg-[#FACFE0]">
                         <div className="flex items-center justify-between px-4 pt-4">
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-bookmark" width={20} height={20} viewBox="0 0 24 24" strokeWidth="1.5" stroke="#2c3e50" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -55,8 +55,7 @@ export default function Product_display(props) {
             </div>
             {/* Card 1 Ends */}
 
-            <div className={model ? '' : 'hidden'}>
-                <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex items-center justify-center font-Poppins">
+            <div className={!model ? 'hidden':"fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex items-center justify-center font-Poppins"}>
                     <div className="bg-white p-2 rounded w-4/12">
 
                         <div class="flex justify-between items-start p-4 rounded-t border-b ">
@@ -98,9 +97,8 @@ export default function Product_display(props) {
 
                     </div>
                 </div>
-            </div>
-
-            </div>
+            
+            
 
         </>
     );
