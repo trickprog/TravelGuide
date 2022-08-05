@@ -18,11 +18,11 @@ function Order_display(props) {
                 
                 <th scope="row" class="py-4 px-6 font-medium    whitespace-nowrap flex">
                 <img class="w-[44px] h-[44px]  rounded-full" src={props.img} alt="Neil image" />
-                <td class="py-4 px-6">
+                <td class="py-4 px-6 font-medium">
                     {props.guide}
                 </td>
                 </th>
-                <td class="py-4 px-6">
+                <td class="py-4 px-6 ">
                     {props.Traveller}
                     <td className='text-gray-500 text-xs '>
                on {props.ondate}
