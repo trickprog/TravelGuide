@@ -42,7 +42,7 @@ export default function Product_display(props) {
                             <p className="text-xs text-gray-600 mt-2">{props.desc}</p>
                             <div className="flex items-center justify-between py-4">
                                 <h2 className="text-[#F27AAC] text-xs font-medium">Bay Area, San Francisco</h2>
-                                <h3 className="text-[#F27AAC] text-xl font-medium">${props.price}</h3>
+                                <h3 className="text-[#F27AAC] text-xl font-medium">{props.price}</h3>
                             </div>
                             <div className="flex items-center justify-between ">
 
