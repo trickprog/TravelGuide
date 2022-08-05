@@ -16,7 +16,7 @@ function Order_display(props) {
      <tbody>
             <tr class="bg-white border-b  text-colortxt text-black font-medium">
                 
-                <th scope="row" class="py-4 px-6 font-medium    whitespace-nowrap flex">
+                <th scope="row" class="py-4 px-6     whitespace-nowrap flex">
                 <img class="w-[44px] h-[44px]  rounded-full" src={props.img} alt="Neil image" />
                 <td class="py-4 px-6">
                     {props.guide}

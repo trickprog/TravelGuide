@@ -13,9 +13,9 @@ const GuideCard = (props) => {
     return (
         <>
      <tbody>
-            <tr class="bg-white border-b  text-colortxt">
+            <tr class="bg-white border-b  font-medium text-black">
                 
-                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap flex">
+                <th scope="row" class="py-4 px-6 font-medium  whitespace-nowrap flex">
                 <img class="w-[44px] h-[44px]  rounded-full" src={props.img} alt="pf" />
                 <Link  to='/Details' className='mt-2.5 ml-2'
                     state={{state:props}}
