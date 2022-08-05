@@ -62,13 +62,13 @@ function Rating() {
                })
    },[])
     return (
-        <div className='flex '>
+        <div className='flex   '>
         <div className='bg-[#363740]'>
         <Navbar /> </div>
-        <div className=''>
+        <div className='w-full '>
         <Header />
-        <div>
-            <div className='w-[950px] ml-5 bg-white rounded-[8px] border-[1px]  mt-[10px]'>
+        <div className='flex flex-col mx-10'>
+            <div className='w-full  bg-white rounded-[8px] border-[1px]  mt-[10px]'>
                 <div className='flex  justify-end'>
                     <div className='mr-auto flex m-5 '>
                         <img src={location.img} alt='' className='   h-[50px] ' />
@@ -110,7 +110,7 @@ function Rating() {
            
         </div>
         </div>
-        </div>
+      </div>
     )
 }
 
