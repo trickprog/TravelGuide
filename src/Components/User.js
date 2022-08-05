@@ -13,7 +13,6 @@ function Users
         {
             id: 1,
             name: 'Jason Crejza',
-            Last_Uploaded: 'Nature.png',
             username: 'Danny_123',
             Gender: 'Male',
             email: '123@gmail.com',
@@ -23,7 +22,6 @@ function Users
         {
             id: 2,
             name: 'Emily Watson',
-            Last_Uploaded: 'Cats.png',
             username: 'Danny_123',
             Gender: 'Male',
             email: '123@gmail.com',
@@ -33,7 +31,6 @@ function Users
         {
             id: 3,
             name: 'Sarah Taylor',
-            Last_Uploaded: 'Tree.png',
             username: 'Danny_123',
             Gender: 'Male',
             email: '123@gmail.com',
@@ -44,7 +41,6 @@ function Users
         {
             id: 4,
             name: 'Jeff Kim ',
-            Last_Uploaded: 'Mountains.png',
             username: 'Danny_123',
             Gender: 'Male',
             email: '123@gmail.com',
@@ -95,9 +91,6 @@ function Users
                                                 Email
                                             </th>
                                             <th scope="col" class="py-3 px-6">
-                                                Last Updated
-                                            </th>
-                                            <th scope="col" class="py-3 px-6">
                                                 Username
                                             </th>
                                             <th scope="col" class="py-3 px-6">
@@ -117,7 +110,6 @@ function Users
                                                 name={val.name}
                                                 email={val.email}
 
-                                                last={val.Last_Uploaded}
                                                 username={val.username}
                                                 img={require('./profile/users/img' + b + '.png')}
                                                 click={handleclick}

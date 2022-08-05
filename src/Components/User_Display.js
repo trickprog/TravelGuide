@@ -22,7 +22,7 @@ function UserDisplay(props) {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    const { name, email, last, img, username } = props;
+    const { name, email, img, username } = props;
 
     return (
         <Fragment>
@@ -37,9 +37,7 @@ function UserDisplay(props) {
                     <td class="py-4 px-6">
                         {email}
                     </td>
-                    <td class="py-4 px-6">
-                        {last}
-                    </td>
+
                     <td class="py-4 px-6">
                         {username}
                     </td>
@@ -78,9 +76,7 @@ function UserDisplay(props) {
                         <div className='flex'>
                             <b>Email : </b> <p className="px-3">{email}</p>
                         </div>
-                        <div className='flex'>
-                            <b>Last : </b> <p className="px-3">{last}</p>
-                        </div>
+    
                         <div className='flex'>
                             <b>Username : </b> <p className="px-3">{username}</p>
                         </div>
