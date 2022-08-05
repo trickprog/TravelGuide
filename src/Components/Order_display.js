@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import DownloadIcon from '@mui/icons-material/Download';
-
+import order from '../assets/order.png';
 
 function Orderdisplay(props) {
 
@@ -60,7 +60,9 @@ function Orderdisplay(props) {
 
             <div className={model ? '' : 'hidden'}>
                 <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex items-center justify-center font-Poppins">
+                    
                     <div className="bg-[#FFF5F9] p-2 rounded w-4/12">
+                        
 
                         <div class="flex justify-between items-start p-4 rounded-t border-b ">
                             <h3 class="text-2xl font-semibold text-gray-900 ">
@@ -72,23 +74,24 @@ function Orderdisplay(props) {
                             </button>
 
                         </div>
-                        <div className='flex space-x-5'>
-                            <div className='flex flex-col space-y-5 mt-2 text-colortxt text-sm'>
-                                <label>Name :</label>
-                                <label>Order no :</label>
-                                <label>Description :</label>
-
-
+                        <div className='flex justify-center mt-2'>
+                            <img src={order} alt='orderlogo'/>
+                        </div>
+                        <div className='flex justify-evenly'>
+                            <div className='flex space-x-2  mt-2 text-colortxt  bg-white text-lg  rounded-lg  py-4 px-6 rounded-t border-b '>
+                                <label className='font-bold'>Name: </label>
+                                <label className='font-medium'>{props.name}</label>
                             </div>
-                            <div className='flex flex-col space-y-5 mt-2 text- text-sm'>
-                                <label>{props.name}</label>
-                                <label>{props.orderno}</label>
-
+                            <div className='flex space-x-2  mt-2 text-colortxt  bg-white text-lg  rounded-lg  py-4 px-6 rounded-t border-b '>
+                                <label className='font-bold'>Order No: </label>
+                                <label className='font-medium'>{props.orderno}</label>
                             </div>
 
                         </div>
-                        <p className='mt-2'>Hi All: For some of our products, we have lengthy negotiations with the customers (from few weeks to a month), for pricing and or any assoicated terms and conditions before the Customer raises a purchase order for us. As most of them are configurable products.</p>
-
+                        <div className='flex flex-col bg-white py-4 px-6 rounded border mx-4 my-2  text-colortxt '>
+                            <label className='font-bold text-lg'>Description:</label>
+                        <p className='mt-2 font-normal'>Hi All: For some of our products, we have lengthy negotiations with the customers (from few weeks to a month), for pricing and or any assoicated terms and conditions before the Customer raises a purchase order for us. As most of them are configurable products.</p>
+                        </div>
                         <hr />
                         <div className='m-3 flex space-x-5 text-black'>
                             <div>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import EditIcon from '@mui/icons-material/Edit';
+
 export default function Product_display(props) {
     const [model, setmodel] = useState(false)
 
@@ -16,24 +17,14 @@ export default function Product_display(props) {
         <>
 
 
-            <div className="flex flex-wrap items-center justify-center  mt-6  font-Poppins">
+            <div className="flex flex-wrap items-center justify-center  mt-6  font-Poppins ">
                 {/* Card 1 */}
-                <div className=" w-72 lg:mb-0 mb-8">
-                    <div>
-                        <img src={props.img} className="w-full h-44" alt="nimg" />
+                <div className=" w-72 lg:mb-0 mb-8 bg-[#FFF5F9]  ">
+                    <div className="flex justify-center m-5">
+                        <img src={props.img} className=" h-44" alt="nimg" />
                     </div>
-                    <div className="bg-[#FFF5F9]  hover:bg-[#FACFE0]">
-                        <div className="flex items-center justify-between px-4 pt-4">
-                            <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-bookmark" width={20} height={20} viewBox="0 0 24 24" strokeWidth="1.5" stroke="#2c3e50" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
-                                </svg>
-                            </div>
-                            <div className="bg-colornav py-1.5 px-6 rounded-full">
-                                <p className="text-xs text-colortxt">Featured</p>
-                            </div>
-                        </div>
+                    <div className="bg-[#FFF5F9] hover:bg-[#ffe9f2]   ">
+
                         <div className="p-4">
                             <div className="flex items-center">
                                 <h2 className="text-lg font-semibold text-colortxt">{props.name}</h2>

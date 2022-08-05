@@ -12,8 +12,8 @@ const style = {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
+    bgcolor: '#FFF5F9',
+    borderRadius:'8px',
     boxShadow: 24,
     p: 4,
 };
@@ -44,7 +44,7 @@ function UserDisplay(props) {
                     <td class=" flex">
                         <button onClick={handleOpen} type="button" class="text-[#2E2E2E] bg-[#F27AAC] mt-7  font-medium rounded-lg text-sm px-4 py-2 ml-[20px] ">View</button>
 
-                        <button  type="button" class="text-red-600 bg-white mt-7  font-medium rounded-lg border border-red-600 text-sm px-4 py-2 ml-2 ">Delete</button>
+                        <button type="button" class="text-red-600 bg-white mt-7  font-medium rounded-lg border border-red-600 text-sm px-4 py-2 ml-2 ">Delete</button>
 
                     </td>
                 </tr>
@@ -62,25 +62,28 @@ function UserDisplay(props) {
                     timeout: 500,
                 }}
             >
-                <Fade in={open} className='font-Poppins bg-colornav'>
-                    <Box sx={style}>
+                <Fade in={open} className='font-Poppins '>
+                    <Box sx={style} className='bg-[#FFF5F9]'>
 
-                        <div className='py-3 flex justify-center '>
-                            <img src={img} alt='' className=' w-[55px] h-[55px]  rounded-full ' />
 
-                        </div>
 
-                        <div className='flex'>
-                            <b>Name : </b> <p className="px-3">{name}</p>
-                        </div>
-                        <div className='flex'>
+                       
+                        <div class="flex flex-col items-center pb-10 text-colortxt ">
+                            <img class="mb-3 w-24 h-24 rounded-full shadow-lg" src={img} alt="Bonnie" />
+                            <h5 class="mb-1 text-xl font-medium mt-3">{name}</h5>
+            
+    
+                        <div className='flex py-4 px-6 rounded-t border-b bg-white'>
                             <b>Email : </b> <p className="px-3">{email}</p>
                         </div>
-    
-                        <div className='flex'>
+
+                        <div className='flex  py-4 px-6 mt-2 rounded-t border-b bg-white'>
                             <b>Username : </b> <p className="px-3">{username}</p>
                         </div>
-
+                        <div className='flex  py-4 px-6 mt-2 rounded-t border-b bg-white'>
+                            <b>Phone no : </b> <p className="px-3">0311225252</p>
+                        </div>
+                        </div>
                     </Box>
                 </Fade>
             </Modal>

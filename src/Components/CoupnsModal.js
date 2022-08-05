@@ -14,8 +14,8 @@ const CoupnsModal = ({ close }) => {
                         </button>
 
 
-                        <div className="py-6 px-6 lg:px-8 text-[#D27095]">
-                            <h3 className="mb-4 text-xl font-medium  ">Add Coupons</h3>
+                        <div className="py-6 px-6 lg:px-8 text-colortxt">
+                            <h3 className="mb-4 text-xl font-medium text-[#D27095] ">Add Coupons</h3>
                             <form className="space-y-6" action="#">
                                 <div className='flex gap-2'>
                                     <input type="text" className="bg-white outline-none border border-[#FACFE0] focus:ring-4 focus:ring-[#FACFE0] placeholder:text-[#D27095] text-sm rounded-lg block w-full p-2.5" placeholder="Tilte" required="" />

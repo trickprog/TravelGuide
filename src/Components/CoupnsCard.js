@@ -1,6 +1,6 @@
 import React, { useState,useRef } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
-
+import pp from '../assets/pp.png';
 
 const CoupnsCard = (props) => {
 
@@ -38,9 +38,9 @@ const CoupnsCard = (props) => {
                     </div>
                 </div>
                 <div class="main">
-                    <div class="co-img">
+                    <div class="co-img rounded-full border border-[#f5aac8] bg-[#f5aac8] ">
                         <img
-                            src={props.img}
+                            src={pp}
                             alt="Product"
                         />
                     </div>

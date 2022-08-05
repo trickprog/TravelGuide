@@ -54,10 +54,10 @@ function Dashboard() {
         <>
 
             <div className='flex flex-col'>
-                <div className="w-full  flex justify-evenly  p-[40px] font-Poppins ">
-                    <div className="bg-white rounded py-5 pl-6 flex items-start shadow">
+                <div className="  flex gap-10 justify-evenly p-[40px] font-Poppins ">
+                    <div className="bg-white rounded p-5 flex items-start shadow w-full ">
                         <div className="text-gray-700 ">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-dashboard" width={32} height={32} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-dashboard ml-2" width={32} height={32} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" />
                                 <circle cx={12} cy={13} r={2} />
                                 <line x1="13.45" y1="11.55" x2="15.5" y2="9.5" />
@@ -65,9 +65,9 @@ function Dashboard() {
                             </svg>
                         </div>
                         <div className="pl-3 pr-10 mt-1">
-                            <h3 className="font-normal leading-4 text-gray-800text-base">Total Orders</h3>
+                            <h3 className="font-medium leading-4 text-gray-800  text-2xl">Total Orders</h3>
                             <div className="flex items-end mt-4">
-                                <h2 className="text-indigo-700 dark:text-indigo-600 text-2xl leading-normal font-medium">2,330</h2>
+                                <h2 className="text-indigo-700 dark:text-indigo-600 text-3xl leading-normal font-medium">2,330</h2>
 
                             </div>
                             <div className="flex items-center mt-5">
@@ -78,12 +78,12 @@ function Dashboard() {
                                         <polyline points="14 7 21 7 21 14" />
                                     </svg>
                                 </div>
-                                <p className="text-green-400 text-xs tracking-wide font-bold leading-normal pl-1">7.2% Increase</p>
+                                <p className="text-green-400 text-lg tracking-wide font-bold leading-normal pl-1">7.2% Increase</p>
                             </div>
                         </div>
                     </div>
 
-                    <div className="bg-white  rounded py-5 pl-6 flex items-start shadow">
+                    <div className="bg-white  rounded p-5 flex items-start shadow w-full">
                         <div className="text-gray-700 ">
                             <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-dashboard" width={32} height={32} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" />
@@ -93,10 +93,10 @@ function Dashboard() {
                             </svg>
                         </div>
                         <div className="pl-3 pr-10 mt-1">
-                            <h3 className="font-normal leading-4 text-gray-800 text-base">Delivered</h3>
+                            <h3 className="font-medium leading-4 text-gray-800 text-2xl">Delivered</h3>
                             <div className="flex items-end mt-4">
-                                <h2 className="text-indigo-700 dark:text-indigo-600 text-2xl leading-normal font-medium">1,330</h2>
-                                <p className="ml-2 mb-1 text-sm text-gray-600 ">from 2,330</p>
+                                <h2 className="text-indigo-700 dark:text-indigo-600 text-3xl leading-normal font-medium">1,330</h2>
+                                <p className="ml-2 mb-1 text-base text-gray-600 ">from 2,330</p>
                             </div>
                             <div className="flex items-center mt-5">
                                 <div className="text-red-400">
@@ -106,11 +106,11 @@ function Dashboard() {
                                         <polyline points="21 10 21 17 14 17" />
                                     </svg>
                                 </div>
-                                <p className="text-red-400 text-xs tracking-wide font-bold leading-normal pl-1">3.5% Decrease</p>
+                                <p className="text-red-400 text-lg  tracking-wide font-bold leading-normal pl-1">3.5% Decrease</p>
                             </div>
                         </div>
                     </div>
-                    <div className="bg-white  rounded py-5 pl-6 flex items-start shadow">
+                    <div className="bg-white  rounded p-5 flex items-start shadow w-full">
                         <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-dashboard text-gray-700 " width={32} height={32} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" />
                             <circle cx={12} cy={13} r={2} />
@@ -118,10 +118,10 @@ function Dashboard() {
                             <path d="M6.4 20a9 9 0 1 1 11.2 0Z" />
                         </svg>
                         <div className="pl-3 pr-10 mt-1">
-                            <h3 className="font-normal leading-4 text-gray-800 text-base">Processing</h3>
+                            <h3 className="font-medium leading-4 text-gray-800 text-2xl">Processing</h3>
                             <div className="flex items-end mt-4">
-                                <h2 className="text-indigo-700 dark:text-indigo-600 text-2xl leading-normal font-medium">500</h2>
-                                <p className="ml-2 mb-1 text-sm text-gray-600 ">from 1000</p>
+                                <h2 className="text-indigo-700 dark:text-indigo-600 text-3xl leading-normal font-medium">500</h2>
+                                <p className="ml-2 mb-1 text-base text-gray-600 ">from 1000</p>
                             </div>
                             <div className="flex items-center mt-5">
                                 <div className="text-green-400">
@@ -131,7 +131,7 @@ function Dashboard() {
                                         <polyline points="14 7 21 7 21 14" />
                                     </svg>
                                 </div>
-                                <p className="text-green-400 text-xs tracking-wide font-bold leading-normal pl-1">7.2% Increase</p>
+                                <p className="text-green-400 text-lg tracking-wide font-bold leading-normal pl-1">7.2% Increase</p>
                             </div>
                         </div>
                     </div>

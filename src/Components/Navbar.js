@@ -5,6 +5,7 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import PersonIcon from '@mui/icons-material/Person';
 import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
+import logo from '../assets/0.png';
 function Navbar() {
 
     const loggedin = localStorage.getItem('auth')
@@ -17,16 +18,13 @@ function Navbar() {
    
             <div className='flex flex-col items-center md:items-start bg-colornav'>
                 <div className='  w-[300px]   h-screen'>
-                    <div className='flex '>
-                        <label className='font-Poppins font-extrabold text-2xl  mt-14 ml-14  text-[#2E2E2E] '>
-
-                            Admin Panel
-                        </label>
+                    <div className='flex justify-center mt-10'>
+                    <img src={logo} alt='logo'/>
                     </div>
 
 
-                    <ul className=' my-5 text-xl font-Poppins text-[#2E2E2E] '>
-                        <div className='flex flex-col ml-12' >
+                    <ul className=' my-2 text-xl font-Poppins text-[#2E2E2E] font-medium '>
+                        <div className='flex flex-col ml-10' >
                             <a href='/Dashboard' className='flex space-x-4 space-y-7 '>
                                 <DashboardIcon className='mt-8' /><li  >
                                     Dashboard</li> </a>

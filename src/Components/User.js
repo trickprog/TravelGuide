@@ -64,17 +64,14 @@ function Users
     return (
         <Fragment>
 
-            <div className=' m-5 font-Poppins'>
+            <div className='font-Poppins'>
+                <label className="flex p-8 text-3xl font-semibold">
+                    Users
+                </label>
+                <hr />
                 {!dis ?
                     <UserDisplay parent={Ids} /> :
-                    <div className={!dis ? 'hidden' : '  bg-white rounded-[8px] border-[1px] mt-[10px]'}>
-                        <div className='flex'>
-                            <p className='w-[200px] font-Poppins m-10 text-2xl font-semibold  '>User's Info</p>
-
-
-
-                        </div>
-                        <div className='m-5'>
+                        <div className= {!dis ? 'hidden' : 'm-5 bg-white'}>
                             
                             <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
                                 <table class="w-full text-sm text-left text-gray">
@@ -120,7 +117,7 @@ function Users
                                 </table>
                                 <hr></hr>
 
-                                <div className='flex mb-7'>
+                                <div className='flex my-4'>
                                     <div className='flex justify-end w-[90%] text-[#9FA2B4] space-x-40'>
                                         <label>Rows per page 8</label>
                                         <label >1-8 of 1240</label>
@@ -135,7 +132,6 @@ function Users
                         </div>
 
 
-                    </div>
                 }
 
 

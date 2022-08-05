@@ -9,7 +9,7 @@ export default function Product() {
     const products = [
         {
             id: 0,
-            name: 'Iphone xs',
+            name: 'Cloths',
             desc: 'The Apple iPhone XS is available in 3 colors with 64GB memory. Shoot amazing videos',
             price: '$1050',
             img: '1'
@@ -17,7 +17,7 @@ export default function Product() {
         },
         {
             id: 1,
-            name: 'Samsung',
+            name: 'Dounts',
             desc: 'Samsung is the best phone avalible in market. Shoot amazing videos',
             price: '$850',
             img: '2'
@@ -25,7 +25,7 @@ export default function Product() {
         },
         {
             id: 2,
-            name: 'Redmi',
+            name: 'Tea Cups',
             desc: 'Redmi comes with 8gb ram  with 2 slots for sim. Shoot amazing videos',
             price: '$450',
             img: '3'
@@ -66,7 +66,7 @@ export default function Product() {
                                 name={val.name}
                                 desc={val.desc}
                                 price={val.price}
-                                img={require('./profile/img' + a + '.jpg')}
+                                img={require('./profile/p' + a + '.png')}
 
                             />
                         })

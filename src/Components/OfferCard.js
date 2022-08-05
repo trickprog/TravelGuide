@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import CloseIcon from '@mui/icons-material/Close';
-import EditIcon from '@mui/icons-material/Edit';
-import OfferCardModal from './OfferCardModal';
+import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
+import don from '../assets/don.png';
 
 
 
 const OfferCard = (props) => {
-    const [open, setopen] = useState(false)
+
     const [ishovering, setishovering] = useState(false)
     const handleMouseEnter = () => {
         setishovering(true)
@@ -18,18 +17,13 @@ const OfferCard = (props) => {
 
     return (
 
-        <div className='flex flex-col items-center justify-center mt-2' >
-            <div className=' bg-[#FFF5F9] rounded-lg border shadow-md  hover:bg-[#FACFE0] ' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} >
+        <div className='flex flex-col items-center justify-center m-3 p-2 bg-[#FFF5F9] rounded-lg border shadow-md  hover:bg-[#ffe9f2] ' >
+            <div className=' ' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} >
                 <div className=' relative '>
                  
-                    <div className={ishovering ? 'absolute top-0 left-0 ' : 'hidden'}>
-                        <button  onClick={() => { setopen(true) }}><EditIcon className='m-2' /></button>
-                        {open && <OfferCardModal 
-                            close={setopen}
-                        />}
-                    </div>
+
                     <div className={ishovering ? 'absolute top-0 right-0 ' : 'hidden'}>
-                        <button onClick={props.delete} ><CloseIcon className='m-2' /></button>
+                        <button onClick={props.delete} ><CancelRoundedIcon className='' /></button>
                     </div>
                 </div>
                 <div class="flex flex-col items-center md:flex-row md:max-w-xl font-Poppins text-[#D27095]">
@@ -38,7 +32,7 @@ const OfferCard = (props) => {
                         <p class="font-normal "><h5 class="inline-flex mb-2 text-4xl font-bold ">{props.price}%</h5> {props.type} </p>
                         <h5 class="text-2xl font-bold tracking-tight ">Discount</h5>
                     </div>
-                    <img src={props.img} class="pl-2 object-cover w-[200px] h-[200px] " alt="" />
+                    <img src={don} class="object-cover m-2  " alt="" />
                 </div>
             </div>
            

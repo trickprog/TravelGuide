@@ -24,6 +24,7 @@ const Offers = () => {
                     />}
                 </div>
             </div>
+            <div className='grid grid-cols-2 m-5'>
             {
                 Offerdata.map((val, ind) => {
                     const a = val.img
@@ -37,10 +38,8 @@ const Offers = () => {
                     />
                 })
             }
-
-            <div className='flex justify-center'>
-
-            </div>
+</div>
+   
 
         </>
     );

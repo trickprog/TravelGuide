@@ -120,7 +120,7 @@ const Coupons = () => {
 
             <div className="font-Poppins ">
                 <label className="flex p-8 text-3xl font-semibold">
-                Coupns
+                Coupons
                 </label>
                 <hr />
                 <div className="flex justify-end">
