@@ -81,8 +81,8 @@ function Orderdisplay(props) {
 
                             </div>
                             <div className='flex flex-col space-y-5 mt-2 text- text-sm'>
-                                <label>Jason Crejza</label>
-                                <label>2564</label>
+                                <label>{props.name}</label>
+                                <label>{props.orderno}</label>
 
                             </div>
 

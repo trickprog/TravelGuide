@@ -77,13 +77,13 @@ export default function Product_display(props) {
 
                             </div>
                             <div className='flex flex-col space-y-2 mt-2 text- text-sm'>
-                                <input className="bg-white  outline-none border border-[#FACFE0] focus:ring-4 focus:ring-[#FACFE0]  placeholder:text-gray-300 text-sm rounded-lg block w-full p-2.5" placeholder="Iphone xs" />
-                                <input className="bg-white  outline-none border border-[#FACFE0] focus:ring-4 focus:ring-[#FACFE0]  placeholder:text-gray-300 text-sm rounded-lg block w-full p-2.5" placeholder="$1050"/>
+                                <input className="bg-white  outline-none border border-[#FACFE0] focus:ring-4 focus:ring-[#FACFE0]  placeholder:text-gray-300 text-sm rounded-lg block w-full p-2.5" placeholder={props.name} />
+                                <input className="bg-white  outline-none border border-[#FACFE0] focus:ring-4 focus:ring-[#FACFE0]  placeholder:text-gray-300 text-sm rounded-lg block w-full p-2.5" placeholder={props.price}/>
 
                             </div>
 
                         </div> 
-                        <textarea className="bg-white mt-3 outline-none border border-[#FACFE0] focus:ring-4 focus:ring-[#FACFE0]  placeholder:text-gray-300 text-sm rounded-lg block w-full h-[200px] p-2.5" placeholder="The Apple iPhone XS is available in 3 colors with 64GB memory. Shoot amazing videos"/>
+                        <textarea className="bg-white mt-3 outline-none border border-[#FACFE0] focus:ring-4 focus:ring-[#FACFE0]  placeholder:text-gray-300 text-sm rounded-lg block w-full h-[200px] p-2.5" placeholder={props.desc}/>
                         <div className="mt-5 mb-5 flex">
                             <label for="myfile" className="">Select an img :</label>
                             <input type="file" id="myfile" name="myfile" className="ml-2" />
