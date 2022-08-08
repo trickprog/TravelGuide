@@ -1,42 +1,38 @@
+
 import {
   BrowserRouter as Router,
   Routes,
   Route,
 } from 'react-router-dom';
-import Navbar from './Components/Navbar';
-import Dashboard from './Components/Dashboard';
-import Product from './Components/Product';
-import Offers from './Components/Offers'
-import Coupons from './Components/Coupons'
+
+import Overview from './Components/Overview';
+import Order_placed from './Components/Order_placed';
+import Guide from './Components/Guide';
+import Travellers from './Components/Traveller';
+
+import Rating from './Components/Rating';
 import Login from './Components/Login';
-import Users from './Components/User';
+import AdminDetails from './Components/AdminDetails';
+import Orderdet from  './Components/Orders_details';
 
 function App() {
 
 
-
-
   return (
-    <>
-      <div className='flex '>
-        <Navbar />
-
-        <div className='w-full'>
-          <Router>
-            <Routes>
-            <Route exact path='/' element={<Dashboard />} />
-              <Route exact path='/Dashboard' element={<Dashboard />} />
-              <Route exact path='/Products' element={<Product />} />
-              <Route exact path='/Offers' element={<Offers />} />
-              <Route exact path='/Coupons' element={<Coupons />} />
-              <Route exact path='/User' element={<Users />} />
-            </Routes>
-          </Router>
-
-        </div>
-      </div>
-
-    </>
+   
+      <Router>
+        <Routes>
+        <Route path="/" element={<Login />} />
+          <Route exact path='/overview' element={<Overview />} />
+          <Route exact path='/Orders' element={<Order_placed />} />
+          <Route exact path='/Ordersdet' element={<Orderdet />} />
+          <Route exact path='/Guides' element={<Guide />} />
+          <Route exact path='/Travellers' element={<Travellers />} />
+          <Route exact path='/AdminDetails' element={<AdminDetails />} />
+          <Route exact path='/Details' element={<Rating />} />
+        </Routes>
+      </Router>
+    
   );
 }
 
