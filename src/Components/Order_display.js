@@ -1,6 +1,6 @@
 import React from 'react'
 import Vector from '../assets/dots.png';
-import {useNavigate} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 function Order_display(props) {
     let color='red'
@@ -19,6 +19,7 @@ navigate('/Ordersdet')
 }
 
     return (
+        
         <>
      <tbody>
             <tr class="bg-white border-b  text-colortxt text-black font-medium">
@@ -26,7 +27,10 @@ navigate('/Ordersdet')
                 <th scope="row" class="py-4 px-6 font-medium    whitespace-nowrap flex">
                 <img class="w-[44px] h-[44px]  rounded-full" src={props.img} alt="Neil image" />
                 <td class="py-4 px-6 font-medium cursor-pointer" onClick={handleclick}>
-                    {props.guide}
+                <Link  to='/Ordersdet' className='mt-2.5 ml-2'
+                    state={{state:props}}
+                    >{props.guide}</Link>
+                    
                 </td>
                 </th>
                 <td class="py-4 px-6 ">

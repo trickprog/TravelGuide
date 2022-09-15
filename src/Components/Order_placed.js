@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Order_display from './Order_display'
 import Vector from '../assets/sort.png';
 import Vector1 from '../assets/Filter.png';
 import arrow1 from '../assets/arrw1.png';
 import arrow2 from '../assets/arrw2.png';
 import Navbar from './Navbar'
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 import Header from './Header'
 function Order_placed() {
 
@@ -72,6 +74,24 @@ function Order_placed() {
             Time:'6:30 PM'
         },
     ]
+    const navigate = useNavigate();
+    const [posts, setPosts] = useState([]);
+    useEffect(() => {
+        axios.get('https://ttravel-guideback.herokuapp.com/admin/order')
+        .then(res => {
+
+            setPosts(res.data);
+            console.log("sca",res.data.length)
+            
+
+        }).catch(error=>{
+
+            console.log(error)
+            if(error.message=="Request failed with status code 401"){
+                navigate('/')
+            }
+        })
+    }, []);
     return (
         <div className='flex   '>
         <div className='bg-[#363740]'>

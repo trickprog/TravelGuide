@@ -112,7 +112,7 @@ function Guide() {
         .then(res => {
 
             setPosts(res.data);
-            console.log("sca",res.data.length)
+            console.log("sca",res.data)
             
 
         }).catch(error=>{
