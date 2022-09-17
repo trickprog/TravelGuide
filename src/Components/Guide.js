@@ -108,7 +108,7 @@ function Guide() {
     const [posts, setPosts] = useState([]);
     //Data is fetching and seting it Equal to setPosts State
     useEffect(() => {
-        axios.get('https://ttravel-guideback.herokuapp.com/admin/guides')
+        axios.get('https://backendtravelguide.herokuapp.com/admin/guides')
         .then(res => {
 
             setPosts(res.data);

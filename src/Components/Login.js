@@ -17,7 +17,7 @@ function Login() {
   
     
     const clickfun= ()=>{
-        axios.post('https://ttravel-guideback.herokuapp.com/admin/login', {
+        axios.post('https://backendtravelguide.herokuapp.com/admin/login', {
             password:strPassword,email:strEmail
           }).then(function (response){
             console.log('dcfsu')

@@ -4,19 +4,17 @@ import {Link, useNavigate} from 'react-router-dom'
 
 function Order_display(props) {
     let color='red'
-    if (props.Profit==='LOW'){
+    if (props.Profit===''){
         color='bg-[#FEC400]'
     }
-    if (props.Profit==='HIGH'){
+    if (props.Profit==='incomplete'){
         color='bg-[#F12B2C]'
     }
-    if (props.Profit==='NORMAL'){
+    if (props.Profit==='completed'){
         color='bg-[#29CC97]'
     }
-    const navigate = useNavigate()
-const handleclick=()=>{
-navigate('/Ordersdet')
-}
+    const arr= props.orderDetails.split(/\r?\n/)
+   
 
     return (
         
@@ -25,8 +23,8 @@ navigate('/Ordersdet')
             <tr class="bg-white border-b  text-colortxt text-black font-medium">
                 
                 <th scope="row" class="py-4 px-6 font-medium    whitespace-nowrap flex">
-                <img class="w-[44px] h-[44px]  rounded-full" src={props.img} alt="Neil image" />
-                <td class="py-4 px-6 font-medium cursor-pointer" onClick={handleclick}>
+                {/* <img class="w-[44px] h-[44px]  rounded-full" src={props.img} alt="Neil image" /> */}
+                <td class="py-4 px-6 font-medium cursor-pointer" >
                 <Link  to='/Ordersdet' className='mt-2.5 ml-2'
                     state={{state:props}}
                     >{props.guide}</Link>
@@ -36,12 +34,12 @@ navigate('/Ordersdet')
                 <td class="py-4 px-6 ">
                     {props.Traveller}
                     <td className='text-gray-500 text-xs '>
-               on {props.ondate}
+               on {arr[1]}
                 </td>
                 </td>
                
                 <td class=" ">
-                    {props.Date}
+                    {arr[2]}
                     <td className='text-gray-500 text-xs '>
                 {props.Time}
                 </td>

@@ -46,11 +46,11 @@ function Rating() {
 
     useEffect(()=>{
 
-        axios.get('https://ttravel-guideback.herokuapp.com/admin/guidesdetail/'+location.email)
+        axios.get('https://backendtravelguide.herokuapp.com/admin/order')
                .then(res => {
    
                   
-                   console.log("sca",res.data[0].city)
+                   console.log("sca",res.data)
                    
    
                }).catch(error=>{
