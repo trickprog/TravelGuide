@@ -49,7 +49,7 @@ function Rating() {
         axios.get('https://backendtravelguide.herokuapp.com/admin/order')
                .then(res => {
    
-                  
+                setPost(res.data)
                    console.log("sca",res.data)
                    
    
@@ -61,6 +61,9 @@ function Rating() {
                    }
                })
    },[])
+
+
+
     return (
         <div className='flex   '>
         <div className='bg-[#363740]'>

@@ -199,12 +199,12 @@ function Guide() {
                     // eslint-disable-next-line react/jsx-pascal-case
                     return <GuideCard
                     key={id}
-                    Name={val.Status.userName}
-                    Location={val.Status.city}
-                    Email={val.Status.email}
-                    img={val.Status.profileImage}
-                    
-                    Status={val.Status.Status}
+                    Name={val.userName}
+                    Location={val.city}
+                    Email={val.email}
+                    img={val.profileImage}
+                    uid={val.UserId}
+                    Status={val.Status}
                     />
                 })
             }

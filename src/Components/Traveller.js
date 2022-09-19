@@ -107,12 +107,13 @@ const Traveller = () => {
 
                                         return <GuideCard
                                             key={id}
-                                            Name={val.Status.userName}
-                                            Location={val.Status.city}
-                                            Email={val.Status.email}
-                                            img={val.Status.profileImage}
+                                            Name={val.userName}
+                                            Location={val.city}
+                                            Email={val.email}
+                                            img={val.profileImage}
                                             //Joined={val.Joined}
-                                            Status={val.Status.Status}
+                                            uid={val.UserId}
+                                            Status={val.Status}
                                         />
                                     })
                                 }
