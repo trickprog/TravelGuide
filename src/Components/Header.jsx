@@ -31,6 +31,9 @@ function Header() {
     if (window.location.pathname === '/Ordersdet') {
         text = 'Order Details'
     }
+    if (window.location.pathname === '/Verify') {
+        text = 'Verify Users'
+    }
 
 
     return (

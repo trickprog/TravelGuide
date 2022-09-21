@@ -4,6 +4,7 @@ import Vector1 from '../assets/Vector.png';
 import Vector2 from '../assets/tick.png';
 import Vector3 from '../assets/Vector3.png';
 import Vector4 from '../assets/Vector5.png';
+import verify from '../assets/verify.png';
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 
@@ -49,6 +50,8 @@ function Navbar() {
                    Guides</li></a>
                    <a href='/Travellers'>  <li className='py-5 flex' ><div className='w-20 ml-2 h-7'><img src={Vector4} alt='1' className='mx-8 mt-1 h-[19px]' /> </div>
                    Travellers</li></a> 
+                   <a href='/Verify'>  <li className='py-5 flex' ><div className='w-20 ml-2 h-7 text-gray-500'><img src={verify} alt='1' className='mx-8 mt-1 h-[19px]' /> </div>
+                   Verify</li></a> 
                    <a href='/' onClick={logout}>  <li className='py-5 flex' ><div className='w-20 ml-2 h-7'><img src={Vector4} alt='1' className='mx-8 mt-1 h-[19px]' /> </div>
                    Logout</li></a> 
 

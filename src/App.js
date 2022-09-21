@@ -14,7 +14,7 @@ import Rating from './Components/Rating';
 import Login from './Components/Login';
 import AdminDetails from './Components/AdminDetails';
 import Orderdet from  './Components/Orders_details';
-
+import Verify from './Components/Verify'
 
 function App() {
 
@@ -31,6 +31,7 @@ function App() {
           <Route exact path='/Travellers' element={<Travellers />} />
           <Route exact path='/AdminDetails' element={<AdminDetails />} />
           <Route exact path='/Details' element={<Rating />} />
+          <Route exact path='/Verify' element={<Verify />} />
         </Routes>
       </Router>
     
