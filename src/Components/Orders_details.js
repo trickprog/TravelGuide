@@ -9,6 +9,12 @@ const Orderdet = () => {
   console.log("dsn", location);
 
   const arr = location.orderDetails.split(/\r?\n/);
+
+  const TotalPrice =location.price
+  const adminShares=20/100*TotalPrice
+ const guideShares=80/100*TotalPrice
+
+
   return (
     <div className="flex ">
       <div className="bg-[#363740]">
@@ -53,7 +59,7 @@ const Orderdet = () => {
                   Admin Shares
                 </h5>
                 <p className="mb-3 font-medium text-2xl font-Poppins text-center text-black  group-hover:text-red-400">
-                ${location.adminShares}/hr
+                ${adminShares}/hr
                 </p>
               </div>
             </div>
@@ -63,7 +69,7 @@ const Orderdet = () => {
                   Guide
                 </h5>
                 <p className="mb-3 font-medium text-2xl font-Poppins text-center text-black  group-hover:text-red-400">
-                ${location.guideShares}/hr
+                ${guideShares}/hr
                 </p>
               </div>
             </div>

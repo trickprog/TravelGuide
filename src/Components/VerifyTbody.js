@@ -99,10 +99,10 @@ export default function VerifyTbody(props) {
               <span class="sr-only">Close modal</span>
             </button>
 
-            <div class="flex justify-start p-6 text-center">
+            <div class="grid grid-cols-2 gap-5 p-6 text-center">
               <a
                 href={props.documents[0]}
-                class="mx-2 max-w-xs sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+                class="mx-3 max-w-xs sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
               >
                 <div class="text-left">
                   <div class="-mt-1 font-sans text-sm font-semibold">
@@ -112,6 +112,26 @@ export default function VerifyTbody(props) {
               </a>
               <a
                 href={props.documents[1]}
+                class="mx-3 max-w-xs sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+              >
+                <div class="text-left">
+                  <div class="-mt-1 font-sans text-sm font-semibold">
+                    Download The Document
+                  </div>
+                </div>
+              </a>
+              <a
+                href={props.documents[3]}
+                class="mx-3 max-w-xs sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+              >
+                <div class="text-left">
+                  <div class="-mt-1 font-sans text-sm font-semibold">
+                    Download The Document
+                  </div>
+                </div>
+              </a>
+              <a
+                href={props.documents[4]}
                 class="mx-3 max-w-xs sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
               >
                 <div class="text-left">
@@ -151,7 +171,7 @@ export default function VerifyTbody(props) {
               class={
                 !input
                   ? "hidden"
-                  : "bg-gray-500  text-gray-900 text-sm rounded-lg  block w-full p-2.5 "
+                  : "bg-gray-200  text-gray-900 text-sm rounded-lg  block w-3/4 p-2.5 "
               }
               placeholder="Reason For Rejecting"
               required
