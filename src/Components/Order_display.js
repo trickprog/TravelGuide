@@ -15,7 +15,7 @@ function Order_display(props) {
     }
     const arr= props.orderDetails.split(/\r?\n/)
    
-
+console.log(      props.adminShares)
     return (
         
         <>
@@ -28,11 +28,11 @@ function Order_display(props) {
                 <Link  to='/Ordersdet' className='mt-2.5 ml-2'
                     state={{state:props}}
                     >{props.guide}</Link>
-                    
+              
                 </td>
                 </th>
                 <td class="py-4 px-6 ">
-                    {props.Traveller}
+                    {props.Traveller}      
                     <td className='text-gray-500 text-xs '>
                on {arr[1]}
                 </td>

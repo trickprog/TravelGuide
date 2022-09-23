@@ -89,6 +89,7 @@ function Order_placed() {
         }
       });
   }, []);
+  console.log(posts)
   return (
     <div className="flex   ">
       <div className="bg-[#363740]">
@@ -147,7 +148,11 @@ function Order_placed() {
                       Traveller={val.travellerName}
                       Profit={val.status}
                       orderDetails={val.orderDetails}
-            />
+                      adminShares={val.adminShares}
+                      price={val.price}
+                      onhold={val.onhold}
+                      guideShares={val.guideShares}
+            />  
                   );
                 })}
               </table>

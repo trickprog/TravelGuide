@@ -9,25 +9,6 @@ const Orderdet = () => {
   console.log("dsn", location);
 
   const arr = location.orderDetails.split(/\r?\n/);
-
-  const Card_data = [
-    {
-      id: 1,
-      title: "Order Amount",
-    },
-    {
-      id: 2,
-      title: "Admin Shares",
-    },
-    {
-      id: 3,
-      title: "Guide",
-    },
-    {
-      id: 4,
-      title: "On hold",
-    },
-  ];
   return (
     <div className="flex ">
       <div className="bg-[#363740]">
@@ -39,11 +20,6 @@ const Orderdet = () => {
           <div className="">
             <div className="flex  justify-end">
               <div className="mr-auto flex m-5 ">
-                <img
-                  src={pf}
-                  alt=""
-                  className="  w-[44px] h-[44px] rounded-full "
-                />
                 <div className=" flex flex-col ml-5 ">
                   <label className=" font-Poppins font-medium  text-black ">
                     {location.guide}
@@ -61,18 +37,46 @@ const Orderdet = () => {
           </div>
 
           <div className="flex justify-evenly ">
-            { Card_data.map((val,ind)=>
             <div>
               <div className="p-6 w-[200px] group h-[134px] bg-white rounded-lg border hover:border-blue-700 border-gray-200 ">
                 <h5 className="mb-2 text-base font-bold tracking-tight text-center  group-hover:text-red-400 text-[#9FA2B4]">
-                  {val.title}
+                  Order Amount
                 </h5>
                 <p className="mb-3 font-medium text-2xl font-Poppins text-center text-black  group-hover:text-red-400">
-                  {arr[0]}
+                ${location.price}/hr
                 </p>
               </div>
             </div>
-)}
+            <div>
+              <div className="p-6 w-[200px] group h-[134px] bg-white rounded-lg border hover:border-blue-700 border-gray-200 ">
+                <h5 className="mb-2 text-base font-bold tracking-tight text-center  group-hover:text-red-400 text-[#9FA2B4]">
+                  Admin Shares
+                </h5>
+                <p className="mb-3 font-medium text-2xl font-Poppins text-center text-black  group-hover:text-red-400">
+                ${location.adminShares}/hr
+                </p>
+              </div>
+            </div>
+            <div>
+              <div className="p-6 w-[200px] group h-[134px] bg-white rounded-lg border hover:border-blue-700 border-gray-200 ">
+                <h5 className="mb-2 text-base font-bold tracking-tight text-center  group-hover:text-red-400 text-[#9FA2B4]">
+                  Guide
+                </h5>
+                <p className="mb-3 font-medium text-2xl font-Poppins text-center text-black  group-hover:text-red-400">
+                ${location.guideShares}/hr
+                </p>
+              </div>
+            </div>
+            <div>
+              <div className="p-6 w-[200px] group h-[134px] bg-white rounded-lg border hover:border-blue-700 border-gray-200 ">
+                <h5 className="mb-2 text-base font-bold tracking-tight text-center  group-hover:text-red-400 text-[#9FA2B4]">
+                  On hold
+                </h5>
+                <p className="mb-3 font-medium text-2xl font-Poppins text-center text-black  group-hover:text-red-400">
+                ${location.onhold}
+                </p>
+              </div>
+            </div>
           </div>
           <div className="flex  justify-end mt-[50px]">
             <div className="mr-auto flex flex-col  m-5 ">
