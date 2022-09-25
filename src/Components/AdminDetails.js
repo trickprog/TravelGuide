@@ -3,13 +3,14 @@ import Header from "./Header";
 import Navbar from "./Navbar";
 import Vector2 from "../assets/photo.png";
 import { useNavigate } from "react-router-dom";
+import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 function AdminDetails() {
   const navigate = useNavigate();
   const [post, setPost] = useState([]);
   const [model, setmodel] = useState(false);
   const [passw, setpassw] = useState(false);
-
+  const [adminid, setadminid] = useState('');
   const [password, setpassword] = useState("password");
   const [txt, settxt] = useState("Show");
   const handleclick = () => {
@@ -27,13 +28,14 @@ function AdminDetails() {
       settxt("Show");
     }
   };
-
+let adminUserId=''
   useEffect(() => {
     axios
       .get("https://backendtravelguide.herokuapp.com/admin/Admin")
       .then((res) => {
         setPost(res.data);
         console.log("sca", res.data);
+        setadminid(res.data[0].UserId)
       })
       .catch((error) => {
         console.log(error);
@@ -42,6 +44,31 @@ function AdminDetails() {
         }
       });
   }, []);
+const wallet=5000
+const getwallet=(token)=>{
+
+  axios.post(`http://localhost:8080/admin/admin/${adminid}`)
+  .then((res)=>{
+    console.log(res)
+  })
+  .catch((err)=>{
+    console.log(err)
+  })
+
+
+const body={
+  token,
+  Wallet:wallet
+}
+axios.post(`http://localhost:8080/admin/addWallet`,body)
+.then((res)=>{
+  console.log(res)
+  window.location.reload(true)
+})
+.catch((err)=>{
+  console.log(err)
+})
+}
 
   return (
     <div className="flex   ">
@@ -52,14 +79,16 @@ function AdminDetails() {
         <Header />
 
         <div className=" mt-5 mx-10  bg-white font-Poppins h-[350px]">
-         { post.map((val, ind) => <div className="flex">
-            <div className="flex items-center ml-5 mt-10">
-              <img
-                src={Vector2}
-                className="rounded-full w-[150px] h-[150px] alt "
-              />
-            </div>
-            
+          {post.map((val, ind) => (
+           
+            <div className="flex">
+              <div className="flex items-center ml-5 mt-10">
+                <img
+                  src={Vector2}
+                  className="rounded-full w-[150px] h-[150px] alt "
+                />
+              </div>
+
               <div
                 key={ind}
                 className="flex flex-col my-6 space-y-5 ml-10 mt-16"
@@ -83,10 +112,17 @@ function AdminDetails() {
                 <div className="flex space-x-4">
                   <label className="text-2xl font-medium">Wallet :</label>
                   <p className="text-lg text-[#4B506D]">{val.wallet}</p>
+                  <StripeCheckout stripeKey="pk_test_51LRBTRSBkkgPPNpux27aS5fwYJfKioUXRavdY1XaRZB8TOMwC5QlMu0r32SMpbFgnLHmQszSytD9azXmrYZWGJsI002uvvzJMj" name="Add To Wallet" token={getwallet} amount={val.wallet*100}>
+                    <button
+                    
+                      type="button"
+                      class="text-white bg-[#263dbe]  font-medium rounded-lg text-sm px-5 py-2.5   "
+                    > Add To Wallet</button>
+                  </StripeCheckout>
                 </div>
               </div>
-            
-          </div>)}
+            </div>
+          ))}
           <div className="flex justify-end m-14 space-x-11 ">
             <button
               type="button"
