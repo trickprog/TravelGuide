@@ -47,7 +47,7 @@ let adminUserId=''
 const wallet=5000
 const getwallet=(token)=>{
 
-  axios.post(`http://localhost:8080/admin/admin/${adminid}`)
+  axios.post(`https://backendtravelguide.herokuapp.com/admin/admin/${adminid}`)
   .then((res)=>{
     console.log(res)
   })
@@ -60,7 +60,7 @@ const body={
   token,
   Wallet:wallet
 }
-axios.post(`http://localhost:8080/admin/addWallet`,body)
+axios.post(`https://backendtravelguide.herokuapp.com/admin/addWallet`,body)
 .then((res)=>{
   console.log(res)
   window.location.reload(true)
