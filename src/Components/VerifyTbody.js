@@ -52,7 +52,6 @@ saveAs(url, 'my-file-label.jpeg');
 
   const autoreject = () => {
     if (arr === undefined) {
-      console.log("moiz");
       setReason("Auto Generated: No Docmuents Found");
       rejectUser(props.UserId);
     }

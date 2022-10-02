@@ -81,7 +81,7 @@ function Order_placed() {
   const [search, setsearch] = useState("");
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/admin/order?q=${search}`)
+      .get(`https://backendtravelguide.herokuapp.com/admin/order?q=${search}`)
       .then((res) => {
         setPosts(res.data);
         console.log("sca", res.data);
