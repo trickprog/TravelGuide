@@ -15,7 +15,11 @@ function Order_display(props) {
     }
     const arr= props.orderDetails.split(/\r?\n/)
    
-console.log(      props.adminShares)
+
+
+const TotalPrice =props.price
+const adminShares=20/100*TotalPrice
+
     return (
         
         <>
@@ -48,8 +52,8 @@ console.log(      props.adminShares)
 
                 <td class="py-4 px-6 ">
                 <button type="button "
-                            className={` rounded-[100px] bg-{{color}}  px-4 py-1 text-white ${color}`}
-                            >{props.Profit}</button>
+                            className={` rounded-[100px]  px-4 py-1 text-black `}
+                            >${adminShares}</button>
                 </td>
                 <td class="py-4 px-6">
                     <img src={Vector}/>

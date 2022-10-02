@@ -20,6 +20,7 @@ const Traveller = () => {
       .get("https://backendtravelguide.herokuapp.com/admin/approval")
       .then((res) => {
         setPosts(res.data);
+        console.log(res.data)
       })
       .catch((error) => {
         console.log(error);

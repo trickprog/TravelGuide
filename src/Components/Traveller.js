@@ -9,47 +9,31 @@ const Traveller = () => {
 
 
 
-    const [CurrentPage, setCurrentPage] = useState(1);
-    const PostPerPage = 4
+
     const [posts, setPosts] = useState([]);
+    const [search, setsearch] = useState("");
     const navigate = useNavigate();
 
     //Data is fetching and seting it Equal to setPosts State
     useEffect(() => {
-        axios.get('https://backendtravelguide.herokuapp.com/admin/traveler')
-            .then(res => {
-
-                setPosts(res.data);
-                console.log("sca", res)
-
-
-            }).catch(error => {
-
-                console.log(error)
-                if (error.message == "Request failed with status code 401") {
-                    navigate('/')
-                }
-            })
-    }, [])
-
-    //Data Showing on the page is limited to 4 Posts only 
-    const indexOfLastPost = CurrentPage * PostPerPage;
-    const indexOfFirstPost = indexOfLastPost - PostPerPage;
-    const CurrentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
-
-    // This is used for changing the page of posts 
-    const paginate = pageNumber => setCurrentPage(pageNumber);
-
-    // Defining the Total posts 
-    let total = posts.length;
-
-    // Filtering Out the Active Users in the Posts 
-    let StatusActive = 0;
-    for (let i = 0; i < posts.length; i++) {
-        if (posts[i].Status === 'Active') {
-            StatusActive += 1;
-        }
-    }
+        // getdata();
+        console.log(search);
+        getdata();
+      }, [search]);
+      const getdata = () => {
+        axios
+          .get(`https://backendtravelguide.herokuapp.com/admin/traveler?q=${search}`)
+          .then((res) => {
+            setPosts(res.data);
+            console.log("sca", res.data);
+          })
+          .catch((error) => {
+            console.log(error);
+            if (error.message == "Request failed with status code 401") {
+              navigate("/");
+            }
+          });
+      };
 
 
 
@@ -62,23 +46,16 @@ const Traveller = () => {
         <div className='flex flex-col mx-10'>
         <div className='w-full bg-white rounded-[8px] border-[1px]  ml-6 mt-[10px]'>
                     <div className=''>
-                        <div className='flex justify-end'>
-                           
-                            <div className=' flex flex-col items-end mt-8 mr-14 font-Poppins text-[#4B506D] font-medium '>
-                                <div>
-                                    <label>Total: </label>
-                                    <label>{total}</label>
-                                </div>
-                                <div>
-                                    <label>Current Active: </label>
-                                    <label>{StatusActive}</label>
-                                </div>
-                            </div>
-
-
-
-
-                        </div>
+                    <div className="m-5">
+                  <input
+                    value={search}
+                    onChange={(e) => setsearch(e.target.value)}
+                    type="text"
+                    class="bg-gray-200  text-gray-900 text-sm rounded-lg  block w-3/4 p-2.5 "
+                    placeholder="Search"
+                    required
+                  />
+                  </div>
                         <div class="overflow-x-auto relative font-Poppins ">
                             <table class="w-full text-sm text-left text-gray-500 ">
                                 <thead class="text-lg text-colortxt uppercase bg-colornav ">
@@ -128,12 +105,6 @@ const Traveller = () => {
 
 
 
-
-                    <Pagination
-                        PostPerPage={PostPerPage}
-                        totalPosts={posts.length}
-                        paginate={paginate}
-                    />
 
                 </div>
 

@@ -49,7 +49,7 @@ const Orderdet = () => {
                   Order Amount
                 </h5>
                 <p className="mb-3 font-medium text-2xl font-Poppins text-center text-black  group-hover:text-red-400">
-                ${location.price}/hr
+                ${location.price}
                 </p>
               </div>
             </div>
@@ -59,7 +59,7 @@ const Orderdet = () => {
                   Admin Shares
                 </h5>
                 <p className="mb-3 font-medium text-2xl font-Poppins text-center text-black  group-hover:text-red-400">
-                ${adminShares}/hr
+                ${adminShares}
                 </p>
               </div>
             </div>
@@ -69,7 +69,7 @@ const Orderdet = () => {
                   Guide
                 </h5>
                 <p className="mb-3 font-medium text-2xl font-Poppins text-center text-black  group-hover:text-red-400">
-                ${guideShares}/hr
+                ${guideShares}
                 </p>
               </div>
             </div>

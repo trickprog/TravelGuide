@@ -75,9 +75,13 @@ function Order_placed() {
   // ]
   const navigate = useNavigate();
   const [posts, setPosts] = useState([]);
+  let orders = "ASC";
+  const [open1, setopen1] = useState(false);
+  const [open, setopen] = useState(false);
+  const [search, setsearch] = useState("");
   useEffect(() => {
     axios
-      .get("https://backendtravelguide.herokuapp.com/admin/order")
+      .get(`http://localhost:8080/admin/order?q=${search}`)
       .then((res) => {
         setPosts(res.data);
         console.log("sca", res.data);
@@ -88,12 +92,22 @@ function Order_placed() {
           navigate("/");
         }
       });
-  }, []);
-  console.log(posts)
+  }, [search]);
+
+  const sorting = (col) => {
+    console.log(col);
+    const co = col.split(" ");
+    console.log(co);
+    if (col === "price") {
+      const sorted = [...posts].sort((a, b) => (a > b ? 1 : -1));
+      setPosts(sorted);
+      console.log(sorted);
+    }
+  };
   return (
     <div className="flex   ">
       <div className="bg-[#363740]">
-        <Navbar />{" "}
+        <Navbar />
       </div>
       <div className="w-full ">
         <Header />
@@ -104,21 +118,47 @@ function Order_placed() {
                 All Orders
               </p>
               <div className="flex w-[100%] justify-end mt-10 mr-14 font-Poppins text-[#4B506D] font-medium space-x-5">
-                <img
-                  src={Vector}
-                  alt=""
-                  className=" w-[17px] h-[14px] mt-[5px] "
-                />
-                <label>Sort</label>
-                <img
-                  src={Vector1}
-                  alt=""
-                  className=" w-[14px] h-[14px] mt-[5px] "
-                />
-                <label>Filter</label>
+                {open && (
+                  <select
+                    id="small"
+                    class=" mb-10  w-xs text-sm text-gray-900 bg-gray-400 rounded-lg "
+                    onChange={(e) => sorting(e.target.value)}
+                  >
+                    <option selected>Sort By</option>
+                    <option value="price">High To Low </option>
+                    <option value="price">Low To High </option>
+                  </select>
+                )}
+                
+                  <img 
+               onClick={() => setopen(true)}
+                    src={Vector}
+                    alt=""
+                    className=" w-[17px] h-[14px] mt-[5px] "
+                  />
+                  <label onClick={() => setopen(false)}>Sort</label>
+             
+                  {open1 && (
+                    <input
+                      value={search}
+                      onChange={(e) => setsearch(e.target.value)}
+                      type="text"
+                      class="bg-gray-400 text-gray-900 text-sm rounded-lg block w-full pl-10 p-2.5 "
+                      placeholder="Search"
+                      required
+                    />
+                  )}
+                  <img
+                  onClick={() => setopen1(true)}
+                    src={Vector1}
+                    alt=""
+                    className=" w-[14px] h-[14px] mt-[5px] "
+                  />
+                  <label onClick={() => setopen1(false)}>Filter</label>
+                
               </div>
             </div>
-            <div class="overflow-x-auto relative font-Poppins  -mt-10">
+            <div class="overflow-x-auto relative font-Poppins  -mt-2">
               <table class="w-full text-sm text-left text-gray-500 ">
                 <thead class="text-lg text-colortxt uppercase bg-colornav ">
                   <tr>
@@ -132,7 +172,7 @@ function Order_placed() {
                       Date
                     </th>
                     <th scope="col" class="py-3 px-4">
-                      Profit
+                      commission
                     </th>
                     <th scope="col" class="py-3 ">
                       Details
@@ -152,7 +192,7 @@ function Order_placed() {
                       price={val.price}
                       onhold={val.onhold}
                       guideShares={val.guideShares}
-            />  
+                    />
                   );
                 })}
               </table>

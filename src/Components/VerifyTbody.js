@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
-
+import { saveAs } from "file-saver";
 import axios from "axios";
 
 export default function VerifyTbody(props) {
   const [open, setopen] = useState(false);
   const [input, setinput] = useState(false);
-  const [Reason, setReason] = useState('');
+  const [Reason, setReason] = useState("");
   let arr = props.documents;
   const aprroveUser = (uid) => {
     console.log(uid);
     const user = {
-      approprops: true,
+      approvalStatus: true,
     };
     axios
       .post(
@@ -27,8 +27,7 @@ export default function VerifyTbody(props) {
 
   const rejectUser = (uid) => {
     const user = {
-      reject: true,
-      reason:Reason,
+      rejectionReason: Reason,
     };
     axios
       .post(
@@ -43,15 +42,22 @@ export default function VerifyTbody(props) {
       });
   };
 
+  const downloadImage = (url, name) => {
+    console.log(url);
+
+saveAs(url, 'my-file-label.jpeg');
+// saveAs('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGBEpwrcx9BLcNgCluJrUoR5IGp0UzC7wt7_jQqpU1&s', 'my-file-label.jpeg');
+
+  };
+
   const autoreject = () => {
     if (arr === undefined) {
       console.log("moiz");
-      setReason('Auto Generated: No Docmuents Found')
+      setReason("Auto Generated: No Docmuents Found");
       rejectUser(props.UserId);
     }
   };
   autoreject();
-
   return (
     <>
       <tr class="bg-white border-b  font-medium text-black">
@@ -66,84 +72,88 @@ export default function VerifyTbody(props) {
         <td class="py-4 px-6">
           <button onClick={() => setopen(true)}>Documents </button>
           <div
-        id="popup-modal"
-        tabindex="-1"
-        class={
-          open
-            ? " fixed top-[25%] right-0 left-[40%] bottom-0 z-50  h-modal  justify-center items-center"
-            : "hidden"
-        }
-        aria-hidden="true"
-      >
-        <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-          <div class="relative bg-white rounded-lg shadow dark:bg-gray-200">
-            <button
-              onClick={() => setopen(false)}
-              type="button"
-              class="absolute top-1 right-1 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
-              data-modal-toggle="popup-modal"
-            >
-              <svg
-                aria-hidden="true"
-                class="w-5 h-5 "
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-              <span class="sr-only">Close modal</span>
-            </button>
+            id="popup-modal"
+            tabindex="-1"
+            class={
+              open
+                ? " fixed top-[25%] right-0 left-[40%] bottom-0 z-50  h-modal  justify-center items-center"
+                : "hidden"
+            }
+            aria-hidden="true"
+          >
+            <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+              <div class="relative bg-white rounded-lg shadow dark:bg-gray-200">
+                <button
+                  onClick={() => setopen(false)}
+                  type="button"
+                  class="absolute top-1 right-1 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+                  data-modal-toggle="popup-modal"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="w-5 h-5 "
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span class="sr-only">Close modal</span>
+                </button>
 
-            <div class="grid grid-cols-2 gap-5 p-6 text-center">
-              <a
-                href={props.documents[0]}
-                class="mx-3 max-w-xs sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
-              >
-                <div class="text-left">
-                  <div class="-mt-1 font-sans text-sm font-semibold">
-                    Download The Document
-                  </div>
+                <div class="grid grid-cols-2 gap-5 p-6 text-center">
+                  <button
+               
+                    class="mx-3 max-w-xs sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+                    download
+                  >
+                    <div class="text-left ">
+                      <div class="-mt-1 font-sans text-sm font-semibold">
+                        Download The Document
+                      </div>
+                    </div>
+                  </button>
+                  <a
+                    
+                   
+                    class="mx-3 max-w-xs sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+                  >
+                    <div class="text-left">
+                      <div class="-mt-1 font-sans text-sm font-semibold">
+                        Download The Document
+                      </div>
+                    </div>
+                  </a>
+                  <a
+                    
+                    download
+                    class="mx-3 max-w-xs sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+                  >
+                    <div class="text-left">
+                      <div class="-mt-1 font-sans text-sm font-semibold">
+                        Download The Document
+                      </div>
+                    </div>
+                  </a>
+                  <a
+                    
+                    
+                    class="mx-3 max-w-xs sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+                  >
+                    <div class="text-left">
+                      <div class="-mt-1 font-sans text-sm font-semibold">
+                        Download The Document
+                      </div>
+                    </div>
+                  </a>
                 </div>
-              </a>
-              <a
-                href={props.documents[1]}
-                class="mx-3 max-w-xs sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
-              >
-                <div class="text-left">
-                  <div class="-mt-1 font-sans text-sm font-semibold">
-                    Download The Document
-                  </div>
-                </div>
-              </a>
-              <a
-                href={props.documents[3]}
-                class="mx-3 max-w-xs sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
-              >
-                <div class="text-left">
-                  <div class="-mt-1 font-sans text-sm font-semibold">
-                    Download The Document
-                  </div>
-                </div>
-              </a>
-              <a
-                href={props.documents[4]}
-                class="mx-3 max-w-xs sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
-              >
-                <div class="text-left">
-                  <div class="-mt-1 font-sans text-sm font-semibold">
-                    Download The Document
-                  </div>
-                </div>
-              </a>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
         </td>
 
         <td class="py-4 px-6">
@@ -164,8 +174,8 @@ export default function VerifyTbody(props) {
           </button>
           <div className="flex">
             <input
-            value={Reason}
-            onChange={(e)=>setReason(e.target.value)}
+              value={Reason}
+              onChange={(e) => setReason(e.target.value)}
               type="text"
               id="first_name"
               class={
@@ -180,15 +190,17 @@ export default function VerifyTbody(props) {
               value={props.UserId}
               onClick={(e) => rejectUser(e.target.value)}
               type="button"
-              class={!input
-                ? "hidden":"focus:outline-none text-black ml-1 font-medium rounded-lg text-sm "}
+              class={
+                !input
+                  ? "hidden"
+                  : "focus:outline-none text-black ml-1 font-medium rounded-lg text-sm "
+              }
             >
               submit
             </button>
           </div>
         </td>
       </tr>
-    
     </>
   );
 }
