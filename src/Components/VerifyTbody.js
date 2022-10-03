@@ -10,24 +10,24 @@ export default function VerifyTbody(props) {
   // /fcm/:valid/:userId/:fcmtoken
   const aprroveUser = (uid) => {
     let uservalues=uid.split(',')
-    const user = {
-      approvalStatus: true,
-    };
+
 
     axios
     .post(
-      `backendtravelguide.herokuapp.com/admin/fcm/${true}/${uservalues[0]}/${uservalues[1]}`
+      `https://backendtravelguide.herokuapp.com/admin/fcm/${true}/${uservalues[0]}/${uservalues[1]}`
     )
     .then((res) => {
-      window.location.reload(true);
+      console.log(res.data)
     })
     .catch((err) => {
       console.error(err);
     });
-
+    const user = {
+      approvalStatus: true,
+    };
     axios
       .post(
-        `https://backendtravelguide.herokuapp.com/admin/approval/${uid}`,
+        `https://backendtravelguide.herokuapp.com/admin/approval/${uservalues[0]}`,
         user
       )
       .then((res) => {
@@ -56,7 +56,7 @@ export default function VerifyTbody(props) {
 
     axios
       .post(
-        `https://backendtravelguide.herokuapp.com/admin/reject/${uid}`,
+        `https://backendtravelguide.herokuapp.com/admin/reject/${uservalues[0]}`,
         user
       )
       .then((res) => {
@@ -130,31 +130,22 @@ saveAs(url, 'my-file-label.jpeg');
                 </button>
 
                 <div class="grid grid-cols-2 gap-5 p-6 text-center">
-                  <button
-               
+                  <a
+               href={props.documents[0]}
                     class="mx-3 max-w-xs sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
                     download
+                    target={'_blank'}
                   >
                     <div class="text-left ">
                       <div class="-mt-1 font-sans text-sm font-semibold">
                         Download The Document
                       </div>
                     </div>
-                  </button>
-                  <a
-                    
-                   
-                    class="mx-3 max-w-xs sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
-                  >
-                    <div class="text-left">
-                      <div class="-mt-1 font-sans text-sm font-semibold">
-                        Download The Document
-                      </div>
-                    </div>
                   </a>
                   <a
-                    
+                    href={props.documents[1]}
                     download
+                    target={'_blank'}
                     class="mx-3 max-w-xs sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
                   >
                     <div class="text-left">
@@ -164,8 +155,21 @@ saveAs(url, 'my-file-label.jpeg');
                     </div>
                   </a>
                   <a
-                    
-                    
+                    href={props.documents[2]}
+                    download
+                    target={'_blank'}
+                    class="mx-3 max-w-xs sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+                  >
+                    <div class="text-left">
+                      <div class="-mt-1 font-sans text-sm font-semibold">
+                        Download The Document
+                      </div>
+                    </div>
+                  </a>
+                  <a
+                    href={props.documents[3]}
+                    download
+                    target={'_blank'}
                     class="mx-3 max-w-xs sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
                   >
                     <div class="text-left">
