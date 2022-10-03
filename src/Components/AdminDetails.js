@@ -10,7 +10,9 @@ function AdminDetails() {
   const [post, setPost] = useState([]);
   const [model, setmodel] = useState(false);
   const [passw, setpassw] = useState(false);
-  const [adminid, setadminid] = useState('');
+  const [adminid, setadminid] = useState("");
+  const [Des, setDes] = useState("");
+
   const [password, setpassword] = useState("password");
   const [txt, settxt] = useState("Show");
   const handleclick = () => {
@@ -28,14 +30,14 @@ function AdminDetails() {
       settxt("Show");
     }
   };
-let adminUserId=''
+
   useEffect(() => {
     axios
       .get("https://backendtravelguide.herokuapp.com/admin/Admin")
       .then((res) => {
         setPost(res.data);
         console.log("sca", res.data);
-        setadminid(res.data[0].UserId)
+        setadminid(res.data[0].UserId);
       })
       .catch((error) => {
         console.log(error);
@@ -44,43 +46,43 @@ let adminUserId=''
         }
       });
   }, []);
-const wallet=5000
-const getwallet=(token)=>{
+ 
 
-  axios.post(`https://backendtravelguide.herokuapp.com/admin/admin/${adminid}`)
-  .then((res)=>{
-    console.log(res)
-  })
-  .catch((err)=>{
-    console.log(err)
-  })
+  const getwallet = (wal) => {
+    axios
+      .post(`https://backendtravelguide.herokuapp.com/admin/admin/${adminid}`)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 
-
-const body={
-  token,
-  Wallet:wallet
-}
-axios.post(`https://backendtravelguide.herokuapp.com/admin/addWallet`,body)
-.then((res)=>{
-  console.log(res)
-  window.location.reload(true)
-})
-.catch((err)=>{
-  console.log(err)
-})
-}
+    const body = {
+      destination: Des,
+      Wallet: wal,
+    };
+    axios
+      .post(`https://backendtravelguide.herokuapp.com/admin/addWallet`, body)
+      .then((res) => {
+        console.log(res);
+        window.location.reload(true);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div className="flex   ">
       <div className="bg-[#363740]">
-        <Navbar />{" "}
+        <Navbar />
       </div>
       <div className="w-full ">
         <Header />
 
         <div className=" mt-5 mx-10  bg-white font-Poppins h-[350px]">
           {post.map((val, ind) => (
-           
             <div className="flex">
               <div className="flex items-center ml-5 mt-10">
                 <img
@@ -112,13 +114,19 @@ axios.post(`https://backendtravelguide.herokuapp.com/admin/addWallet`,body)
                 <div className="flex space-x-4">
                   <label className="text-2xl font-medium">Wallet :</label>
                   <p className="text-lg text-[#4B506D]">{val.wallet}</p>
-                  <StripeCheckout stripeKey="pk_test_51LRBTRSBkkgPPNpux27aS5fwYJfKioUXRavdY1XaRZB8TOMwC5QlMu0r32SMpbFgnLHmQszSytD9azXmrYZWGJsI002uvvzJMj" name="Add To Wallet" token={getwallet} amount={val.wallet*100}>
-                    <button
-                    
-                      type="button"
-                      class="text-white bg-[#263dbe]  font-medium rounded-lg text-sm px-5 py-2.5   "
-                    > Add To Wallet</button>
-                  </StripeCheckout>
+                  <input
+                    value={Des}
+                    onChange={(e) => setDes(e.target.value)}
+                    className="bg-white  outline-none border border-[#6a6b70] focus:ring-4 focus:ring-[#b7b9c2]  placeholder:text-gray-300 text-sm  block w-full p-5"
+                    placeholder="Account ID  / Acount Number "
+                  />
+                  <button
+                    type="button"
+                    class="flex justify-end text-red-700 bg-white  border border-red-700 font-medium rounded-lg text-sm px-5 py-2.5"
+                    onClick={()=>getwallet(val.wallet)}
+                  >
+                    Add to wallet
+                  </button>
                 </div>
               </div>
             </div>

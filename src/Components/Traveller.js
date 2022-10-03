@@ -91,6 +91,7 @@ const Traveller = () => {
                                             //Joined={val.Joined}
                                             uid={val.UserId}
                                             Status={val.Status}
+                                            documents={val.documents}
                                         />
                                     })
                                 }

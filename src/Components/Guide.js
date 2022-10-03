@@ -179,6 +179,7 @@ function Guide() {
                         img={val.profileImage}
                         uid={val.UserId}
                         Status={val.Status}
+                        documents={val.documents}
                       />
                     );
                   })}
