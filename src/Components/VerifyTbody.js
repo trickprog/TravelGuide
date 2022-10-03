@@ -7,11 +7,24 @@ export default function VerifyTbody(props) {
   const [input, setinput] = useState(false);
   const [Reason, setReason] = useState("");
   let arr = props.documents;
+  // /fcm/:valid/:userId/:fcmtoken
   const aprroveUser = (uid) => {
-    console.log(uid);
+    let uservalues=uid.split(',')
     const user = {
       approvalStatus: true,
     };
+
+    axios
+    .post(
+      `backendtravelguide.herokuapp.com/admin/fcm/${true}/${uservalues[0]}/${uservalues[1]}`
+    )
+    .then((res) => {
+      window.location.reload(true);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+
     axios
       .post(
         `https://backendtravelguide.herokuapp.com/admin/approval/${uid}`,
@@ -29,6 +42,18 @@ export default function VerifyTbody(props) {
     const user = {
       rejectionReason: Reason,
     };
+    let uservalues=uid.split(',')
+    axios
+    .post(
+      `backendtravelguide.herokuapp.com/admin/fcm/${false}/${uservalues[0]}/${uservalues[1]}`
+    )
+    .then((res) => {
+      window.location.reload(true);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+
     axios
       .post(
         `https://backendtravelguide.herokuapp.com/admin/reject/${uid}`,
@@ -157,8 +182,8 @@ saveAs(url, 'my-file-label.jpeg');
 
         <td class="py-4 px-6">
           <button
-            value={props.UserId}
-            onClick={(e) => aprroveUser(e.target.value)}
+            value={[props.UserId,props.FCMToken]}
+            onClick={(e) => aprroveUser(e.target.value,e.target.value)}
             type="button"
             class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"
           >
@@ -186,7 +211,7 @@ saveAs(url, 'my-file-label.jpeg');
               required
             />
             <button
-              value={props.UserId}
+              value={[props.UserId,props.FCMToken]}
               onClick={(e) => rejectUser(e.target.value)}
               type="button"
               class={

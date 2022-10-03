@@ -76,6 +76,7 @@ const Traveller = () => {
                           userName={val.userName}
                           documents={val.documents}
                           UserId={val.UserId}
+                          FCMToken={val.FCMToken}
                         />
                       );
                     })}
